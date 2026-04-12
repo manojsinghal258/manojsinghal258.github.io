@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Manoj Singhal - Lead Software Quality Assurance Engineer, IIT Delhi Alum, IEEE Sr. Member, EB1A Recipient" />
+    <title>Manoj Singhal | Lead QA Engineer & AI Expert</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .timeline {
+            border-left: 2px solid var(--border-color);
+            margin-left: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-year {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            position: relative;
+        }
+
+        .timeline-year::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-item-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-item-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Manoj Singhal</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#publications">Publications</a>
+                <a href="#contributions">Media & Honors</a>
+                <a href="#articles">Articles</a>
+                <a href="#curated">Recommendations</a>
+            </div>
+            <a href="#contact" class="btn btn-primary"
+                style="display: none /* Hide on mobile mostly, simplified for now */">Collaborate</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tags">
+                    <span class="tag">Lead QA Engineer</span>
+                    <span class="tag">IIT Delhi Alumni</span>
+                    <span class="tag">IEEE Sr. Member</span>
+                    <span class="tag">EB-1A Recipient</span>
+                </div>
+                <!-- Adjusted font size class/inline if needed, but the main styling is in style.css -->
+                <h1>Engineering Quality in the AI Era.</h1>
+                <p class="hero-subtitle">Lead Software Quality Assurance Engineer @ Opaque Systems</p>
+                <p class="hero-text">
+                    I bring over 15 years of diverse experience in transformational QA. My work focuses on Confidential
+                    Computing, Cloud Backup & Recovery, Data Management, and integrating AI/ML to proactively assess and
+                    resolve impact on customer workflows.
+                </p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#publications" class="btn btn-primary">View My Work</a>
+                    <a href="https://www.linkedin.com/in/manojsinghal258" target="_blank"
+                        class="btn btn-outline">Connect on LinkedIn</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Image boundaries constrained so it fits beautifully regardless of initial aspect ratio -->
+                <img src="./Manoj_Profile_Pic_7584.jpg" alt="Manoj Singhal Professional Portrait"
+                    style="max-height: 450px; width: 100%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow-lg);"
+                    onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>My Journey</h2>
+                    <p>
+                        With 15+ years of extensive experience leading Quality Assurance strategies, I currently serve
+                        as the Lead Software Quality Assurance Engineer at Opaque Systems in the San Francisco Bay Area.
+                        My academic foundation was built at the prestigious Indian Institute of Technology, Delhi (IIT
+                        Delhi).
+                    </p>
+                    <p>
+                        Recognized as an outstanding researcher and engineer, I was awarded the US EB-1A visa, an honor
+                        reserved for individuals with extraordinary ability. As a Senior Member of the IEEE, I am
+                        actively engaged in advancing tech standards, reviewing research, and publishing papers on Cloud
+                        infrastructure, Backup/Recovery, and AI-driven testing.
+                    </p>
+                    <p>
+                        Beyond my professional role, I am committed to making this world a better place to live—a
+                        philosophy that drives my mentorship, speaking engagements, and written articles navigating the
+                        startup ecosystem and AI engineering.
+                    </p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3 id="scholar-citations">170+</h3>
+                        <p>Google Scholar Citations</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="scholar-papers">10+</h3>
+                        <p>Publications & Patents</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>EB1A</h3>
+                        <p>Visa Recipient</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>IEEE</h3>
+                        <p>Senior Member</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications & Research Section -->
+    <section class="section" id="publications" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Research & Publications</h2>
+            <p class="section-subtitle">Select works from my Google Scholar profile focusing on Data Management, Backup
+                Recovery, and AI-driven innovations.</p>
+
+            <div class="grid-2">
+                <!-- Pub 1 -->
+                <div class="card">
+                    <h3 class="card-title">Restoring a database using a fully hydrated backup</h3>
+                    <p class="card-text">
+                        A recognized patent/publication highlighting robust methods to fully hydrate backups,
+                        significantly minimizing downtime during database restorations. (Cited by ~88)
+                    </p>
+                </div>
+
+                <!-- Pub 2 -->
+                <div class="card">
+                    <h3 class="card-title">Using a secondary storage system to maintain functionality...</h3>
+                    <p class="card-text">
+                        Focuses on strategies to ensure zero-downtime and high availability during complex database
+                        migrations using intermediary storage systems. (Cited by ~48 total)
+                    </p>
+                </div>
+
+                <!-- Pub 3 -->
+                <div class="card">
+                    <h3 class="card-title">Mitigating cloud disruptions: an AI-driven approach...</h3>
+                    <p class="card-text">
+                        Proactively assessing and resolving impacts on customer workflows during cloud outages through
+                        the implementation of artificial intelligence mechanisms.
+                    </p>
+                </div>
+
+                <!-- Pub 4 -->
+                <div class="card">
+                    <h3 class="card-title">Revolutionizing DevOps and Security Compliance with GenAI</h3>
+                    <p class="card-text">
+                        Addressing the transformative impact of Generative AI on modern DevOps practices, taking a 360
+                        orchestration approach to security and compliance.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">AI-driven green testing</h3>
+                    <p class="card-text">
+                        Optimizing efficiency and sustainability in software testing to ensure that our expanding
+                        technological footprint remains environmentally conscious.
+                    </p>
+                </div>
+
+                <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="https://scholar.google.com/citations?user=1RZcuvcAAAAJ&hl=en" target="_blank"
+                        class="btn btn-outline" style="width: 100%;">View all on Google Scholar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Year-by-Year Contributions Section -->
+    <section class="section" id="contributions">
+        <div class="container">
+            <h2 class="section-title">Podcasts, Book Chapters & Reviews</h2>
+            <p class="section-subtitle">A chronological, expandable record of my ongoing contributions to academia and
+                the tech community that aren't captured on Google Scholar.</p>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="timeline">
+                    <!-- 2026 -->
+                    <details open>
+                        <summary class="timeline-year" style="cursor:pointer; outline:none;">2026 <span
+                                style="font-size:0.9rem; color:var(--text-secondary); font-weight:normal;">(Click to
+                                expand/collapse)</span></summary>
+                        <div class="timeline-item">
+                            <div class="timeline-item-title">Reviewer Board Member</div>
+                            <p class="timeline-item-desc">Serving as a reviewer resolving and evaluating research papers
+                                for various esteemed conferences and journals.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item-title">Conference Chair & Co-Chair</div>
+                            <p class="timeline-item-desc">Actively judging and assessing other technical works, steering
+                                discussions, and leading conference tracks globally.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item-title">Paper Review - JCCE</div>
+                            <p class="timeline-item-desc">Reviewed a paper titled "xxx" at the Journal of Cloud
+                                Computing & Engineering (JCCE).</p>
+                        </div>
+                    </details>
+
+                    <!-- 2025 -->
+                    <details>
+                        <summary class="timeline-year" style="cursor:pointer; outline:none;">2025 <span
+                                style="font-size:0.9rem; color:var(--text-secondary); font-weight:normal;">(Click to
+                                expand/collapse)</span></summary>
+                        <div class="timeline-item">
+                            <div class="timeline-item-title">Book Chapter - IYC Publishing</div>
+                            <p class="timeline-item-desc">Authored a chapter titled "xxx" in the book "yyy" published at
+                                IYC.</p>
+                        </div>
+                    </details>
+
+                    <!-- Formatted placeholder for adding future items -->
+                    <!-- 
+                    <details>
+                        <summary class="timeline-year" style="cursor:pointer; outline:none;">2024</summary>
+                        <div class="timeline-item">
+                            <div class="timeline-item-title">Podcast Appearance - [Podcast Name]</div>
+                            <p class="timeline-item-desc">Discussed [Topic] with [Host] on how AI is reshaping the QA landscape.</p>
+                        </div> 
+                    </details>
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LinkedIn Articles Section -->
+    <section class="section" id="articles" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Articles & Thoughts</h2>
+            <p class="section-subtitle">Insights shared on LinkedIn regarding technology, career development, and
+                customer experience.</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3 class="card-title">Summary of Generative AI & Prompt Engineering</h3>
+                    <p class="card-text">
+                        An overview of how Generative AI and Prompt Engineering enable AI models to generate text,
+                        images, and other creative assets.
+                    </p>
+                    <div class="card-footer">
+                        <a href="https://www.linkedin.com/pulse/summary-generative-ai-prompt-engineering-manoj-singhal-0xlwc"
+                            target="_blank" class="card-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">A Journey from Saboteur to Sage</h3>
+                    <p class="card-text">
+                        Reflections on hiring, leadership, and personal growth learned during my tenure at Cohesity.
+                    </p>
+                    <div class="card-footer">
+                        <a href="https://www.linkedin.com/pulse/journey-from-saboteur-sage-manoj-singhal-hiring-"
+                            target="_blank" class="card-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Fake v/s Real PayPal, who wins?</h3>
+                    <p class="card-text">
+                        A deep dive into "Customer Experience" and technical learnings drawn from a personal interaction
+                        with payment gateways.
+                    </p>
+                    <div class="card-footer">
+                        <a href="https://www.linkedin.com/pulse/fake-vs-real-paypal-who-wins-manoj-singhal"
+                            target="_blank" class="card-link">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                    <a href="https://www.linkedin.com/in/manojsinghal258/recent-activity/articles/" target="_blank"
+                        class="btn btn-outline" style="width: 100%;">View all on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Knowledge Section -->
+    <section class="section" id="curated">
+        <div class="container">
+            <h2 class="section-title">Curated Knowledge & Recommendations</h2>
+            <p class="section-subtitle">Books, courses, and tools crafted by others that I have read or used, and highly
+                recommend to my followers.</p>
+
+            <div class="grid-3">
+                <!-- Recommendation 1 -->
+                <div class="card">
+                    <div class="card-icon">📖</div>
+                    <h3 class="card-title">[Book Placeholder]</h3>
+                    <p class="card-text">
+                        A brief description of why this book was impactful and what you can learn from it, specifically
+                        relating to AI or QA leadership.
+                    </p>
+                    <div class="card-footer">
+                        <a href="#" target="_blank" class="card-link">View Book →</a>
+                    </div>
+                </div>
+
+                <!-- Recommendation 2 -->
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3 class="card-title">[Course Placeholder]</h3>
+                    <p class="card-text">
+                        Recommendation for an online course that helps build skills in modern tech stacks, automation,
+                        or executive leadership.
+                    </p>
+                    <div class="card-footer">
+                        <a href="#" target="_blank" class="card-link">View Course →</a>
+                    </div>
+                </div>
+
+                <!-- Recommendation 3 -->
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3 class="card-title">[Tool Placeholder]</h3>
+                    <p class="card-text">
+                        An excellent framework or platform built by the community that I actively use in my workflows to
+                        boost productivity.
+                    </p>
+                    <div class="card-footer">
+                        <a href="#" target="_blank" class="card-link">Try Tool →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect & Collaborate / CTA -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="cta">
+                <h2>Let's Connect & Collaborate</h2>
+                <p>
+                    Whether focusing on building robust QA practices, brainstorming innovative AI ideas, or discussing
+                    research and startup growth, I am always open to collaborating. You can download my complete
+                    profiles below to see how we can work together.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <a href="https://docs.google.com/document/d/13RvSdrVH08LCNDClObXMTF8AmY0mVdqZLm4LetV1QIM/export?format=pdf"
+                        target="_blank" class="btn btn-outline" style="color: white; border-color: white;">Download
+                        Resume (.pdf)</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1N4br8RRKfb2o9gcjRex1tK_ZMSK4NVz5"
+                        target="_blank" class="btn btn-outline" style="color: white; border-color: white;">Download
+                        Speaker Profile</a>
+                </div>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="mailto:manojsinghal258@gmail.com" class="btn btn-outline"
+                        style="color: white; border-color: white;">Get in Touch</a>
+                    <a href="https://www.linkedin.com/in/manojsinghal258" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary"
+                        style="background: white; color: var(--primary-color); position: relative; z-index: 10;">Connect
+                        on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Manoj Singhal</h3>
+                    <p>Lead QA Engineer at Opaque Systems, IEEE Senior Member, and AI Innovator based in the US.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#publications">Citations & Papers</a></li>
+                        <li><a href="#contributions">Other Contributions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/manojsinghal258" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://github.com/manojsinghal258/manojsinghal258.github.io"
+                                target="_blank">GitHub</a></li>
+                        <li><a href="https://scholar.google.com/citations?user=1RZcuvcAAAAJ&hl=en"
+                                target="_blank">Google Scholar</a></li>
+                        <li><a href="mailto:manojsinghal258@gmail.com">Email Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Manoj Singhal. All Data Authentic and Verified.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Live Data Fetching -->
+    <script>
+        async function fetchScholarData() {
+            try {
+                // We use allorigins.win to bypass CORS restrictions when fetching Google Scholar
+                const scholarUrl = 'https://scholar.google.com/citations?user=1RZcuvcAAAAJ&hl=en';
+                const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(scholarUrl)}`;
+
+                const response = await fetch(proxyUrl);
+                const data = await response.json();
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data.contents, 'text/html');
+
+                // Extract total citations
+                const citationElements = doc.querySelectorAll('.gsc_rsb_std');
+                if (citationElements.length > 0) {
+                    const totalCitations = citationElements[0].innerText;
+                    document.getElementById('scholar-citations').innerText = totalCitations + '+';
+                }
+
+                // Count number of papers/patents listed on the page
+                const paperElements = doc.querySelectorAll('.gsc_a_tr');
+                if (paperElements.length > 0) {
+                    document.getElementById('scholar-papers').innerText = paperElements.length + '+';
+                }
+            } catch (error) {
+                console.error('Error fetching scholar data:', error);
+                // If it fails, fallback values (170+, 10+) remain untouched in the HTML
+            }
+        }
+
+        // Execute fetch after page loads
+        window.addEventListener('DOMContentLoaded', fetchScholarData);
+    </script>
+</body>
+
+</html>
