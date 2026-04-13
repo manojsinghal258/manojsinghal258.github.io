@@ -548,7 +548,8 @@
         async function fetchTimelineData() {
             try {
                 // INSTRUCTIONS:
-                // 1. Create a Google Sheet with 3 columns: Year, Title, Description
+                // 1. Create a Google Sheet with 4 columns: Year, Month, Title, Description
+                // (Note: Use numbers 1-12 in the "Month" column to ensure proper chronological processing)
                 // 2. Go to File -> Share -> Publish to web
                 // 3. Select your sheet, choose "Comma-separated values (.csv)", and click Publish
                 // 4. Paste that generated URL inside the quotes below:
@@ -580,6 +581,13 @@
                         const years = Object.keys(grouped).sort((a,b) => b - a);
 
                         years.forEach((year, index) => {
+                            // Sort items within exactly the same year by descending month (highest month first)
+                            grouped[year].sort((a, b) => {
+                                const monthA = a.Month ? parseInt(a.Month) : 0;
+                                const monthB = b.Month ? parseInt(b.Month) : 0;
+                                return monthB - monthA;
+                            });
+
                             const isOpen = index === 0 ? 'open' : '';
                             html += `
                             <details ${isOpen}>
