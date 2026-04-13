@@ -1,6 +1,6 @@
-Year,Title,Description
-2026,Reviewer Board Member,"Serving as a reviewer resolving and evaluating research papers for various esteemed conferences and journals."
-2026,Conference Chair & Co-Chair,"Actively judging and assessing other technical works, steering discussions, and leading conference tracks globally."
-2026,Paper Review - JCCE,"Reviewed a paper titled ""xxx"" at the Journal of Cloud Computing & Engineering (JCCE)."
-2025,Book Chapter - IYC Publishing,"Authored a chapter titled ""xxx"" in the book ""yyy"" published at IYC."
-2024,Podcast Appearance - QA Leaders,"Discussed how AI is reshaping the QA landscape and accelerating automation strategies."
+Year,Month,Title,Description
+2026,10,Reviewer Board Member,"Serving as a reviewer resolving and evaluating research papers for various esteemed conferences and journals."
+2026,08,Conference Chair & Co-Chair,"Actively judging and assessing other technical works, steering discussions, and leading conference tracks globally."
+2026,01,Paper Review - JCCE,"Reviewed a paper titled ""xxx"" at the Journal of Cloud Computing & Engineering (JCCE)."
+2025,11,Book Chapter - IYC Publishing,"Authored a chapter titled ""xxx"" in the book ""yyy"" published at IYC."
+2024,05,Podcast Appearance - QA Leaders,"Discussed how AI is reshaping the QA landscape and accelerating automation strategies."
