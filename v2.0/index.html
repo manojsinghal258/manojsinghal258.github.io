@@ -594,14 +594,26 @@
                                 <summary class="timeline-year" style="cursor:pointer; outline:none;">${year} <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:normal;">(Click to expand/collapse)</span></summary>`;
                             
                             grouped[year].forEach(item => {
-                                // Convert raw URLs into clickable links and respect newline formatting from CSV
                                 const rawDesc = item.Description || '';
-                                const linkedDesc = rawDesc.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
+                                const lines = rawDesc.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+                                
+                                let descHtml = '';
+                                if (lines.length === 1) {
+                                    let linkedLine = lines[0].replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
+                                    descHtml = `<p class="timeline-item-desc" style="margin-top: 0.5rem;">${linkedLine}</p>`;
+                                } else if (lines.length > 1) {
+                                    descHtml = `<ul class="timeline-item-desc" style="margin-top: 0.5rem; padding-left: 1.2rem; list-style-type: disc;">`;
+                                    lines.forEach(line => {
+                                        let linkedLine = line.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
+                                        descHtml += `<li style="margin-bottom: 0.5rem;">${linkedLine}</li>`;
+                                    });
+                                    descHtml += `</ul>`;
+                                }
                                 
                                 html += `
                                 <div class="timeline-item">
                                     <div class="timeline-item-title">${item.Title}</div>
-                                    <p class="timeline-item-desc" style="white-space: pre-wrap; margin-top: 0.5rem;">${linkedDesc}</p>
+                                    ${descHtml}
                                 </div>`;
                             });
 
