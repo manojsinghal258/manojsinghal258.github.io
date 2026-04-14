@@ -553,7 +553,7 @@
                 // 2. Go to File -> Share -> Publish to web
                 // 3. Select your sheet, choose "Comma-separated values (.csv)", and click Publish
                 // 4. Paste that generated URL inside the quotes below:
-                const sheetCsvUrl = ''; 
+                const sheetCsvUrl = './docs/speaking-media-timeline.csv'; 
                 
                 if (!sheetCsvUrl) {
                     console.log("No CSV URL provided for timeline, using HTML fallback.");
@@ -594,10 +594,14 @@
                                 <summary class="timeline-year" style="cursor:pointer; outline:none;">${year} <span style="font-size:0.9rem; color:var(--text-secondary); font-weight:normal;">(Click to expand/collapse)</span></summary>`;
                             
                             grouped[year].forEach(item => {
+                                // Convert raw URLs into clickable links and respect newline formatting from CSV
+                                const rawDesc = item.Description || '';
+                                const linkedDesc = rawDesc.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
+                                
                                 html += `
                                 <div class="timeline-item">
                                     <div class="timeline-item-title">${item.Title}</div>
-                                    <p class="timeline-item-desc">${item.Description || ''}</p>
+                                    <p class="timeline-item-desc" style="white-space: pre-wrap; margin-top: 0.5rem;">${linkedDesc}</p>
                                 </div>`;
                             });
 

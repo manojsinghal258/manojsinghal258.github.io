@@ -1,6 +1,22 @@
-Year,Month,Title,Description
-2026,10,Reviewer Board Member,"Serving as a reviewer resolving and evaluating research papers for various esteemed conferences and journals."
-2026,08,Conference Chair & Co-Chair,"Actively judging and assessing other technical works, steering discussions, and leading conference tracks globally."
-2026,01,Paper Review - JCCE,"Reviewed a paper titled ""xxx"" at the Journal of Cloud Computing & Engineering (JCCE)."
-2025,11,Book Chapter - IYC Publishing,"Authored a chapter titled ""xxx"" in the book ""yyy"" published at IYC."
-2024,05,Podcast Appearance - QA Leaders,"Discussed how AI is reshaping the QA landscape and accelerating automation strategies."
+Year,Month,Title,Description,Category
+2026,4,Research Paper Review,"Contributing to the evaluation of research in AI, machine learning, and computational intelligence - 
+
+Active Reviewer for the Journal of Computational and Cognitive Engineering (JCCE) since 2023, 
+https://ojs.bonviewpress.com/index.php/JCCE/
+
+Active Reviewer for the Journal of Emerging Technologies and Innovative Research (JETIR) since 2024, https://www.jetir.org/ 
+
+Active Reviewer for the INTERNATIONAL CONFERENCE ON INFORMATION MANAGEMENT & MACHINE INTELLIGENCE (ICIMMI), since 2022, https://icimmi.poornima.org/
+
+Active Reviewer for IEEE access, since 2024, https://ieeeaccess.ieee.org/",Research Paper Review
+2026,2,Book - Chapter,"Wrote a chapter, title ""AI Disruption and Opportunities: Preparing Youth for Global Challenges"" in book published by Jaipuria INstitute of Management, https://www.jaipuria.ac.in/youth2047/",
+2026,1,Speaker,"Invited as speaker at San Francisco Meetup on Jan 27th organized by the test tribe
+https://www.thetesttribe.com/",
+2025,2,podcast,"At podcast hosted by Gandharv Madan, we discussed about “What is SaaS and Why is it Important for Testers to Understand?”",
+2024,11,podcast,"At podcast hosted by Evgeny Kim we talked about “How to Stand Out as a Lead Software QA Engineer!”,",
+2024,10,Volunteer,"Volunteer at various IEEE programs in Bay Area, since 2022, https://www.ieee.org/
+
+Volunteer as Proctor at IEEE xtreme, Ocotber 2024, https://ieeextreme.org/",
+2024,12,Judge/Chair,"Session Co-Chair for Technical Session  at the 6th International Conference on Information Management & Machine Intelligence (ICIMMI-2024), organized by the Poornima Institute of Engineering & Technology (PIET), Jaipur, India.",
+2023,11,podcast,"At TechGuide Podcast (Episode #39), I shared insights on navigating careers in both startups and corporations, aiming to inspire listeners to make an impactful career in technology.",
+2023,2,Judge/Chair,"Session Chair for Technical Research Paper Presentations at the International Conference (YOUTH 2025), Jaipuria Institute of Management, contributing to the evaluation and discussion of research in emerging technologies. https://www.jaipuria.ac.in/",
