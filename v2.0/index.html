@@ -595,7 +595,8 @@
                             
                             grouped[year].forEach(item => {
                                 const rawDesc = item.Description || '';
-                                const lines = rawDesc.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+                                // Split by double newline to handle paragraphs correctly
+                                const lines = rawDesc.split(/\n\s*\n/).map(l => l.trim()).filter(l => l.length > 0);
                                 
                                 let descHtml = '';
                                 if (lines.length === 1) {
