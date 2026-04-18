@@ -340,30 +340,30 @@
     <section class="section" id="ai-tools" style="background-color: var(--bg-color);">
         <div class="container">
             <h2 class="section-title">AI Agents & Innovations</h2>
-            <p class="section-subtitle">Custom AI agents and tools I've developed to streamline product management, research, and technical workflows.</p>
+            <p class="section-subtitle">Custom AI agents I've built using MindStudio to solve real-world research and product challenges — free to try.</p>
 
             <div class="grid-2">
-                <!-- Tool 1 -->
+                <!-- Tool 1: Citation Assistant -->
                 <div class="card">
-                    <div class="card-icon">🤖</div>
-                    <h3 class="card-title">PRD Creator Agent</h3>
+                    <div class="card-icon">📚</div>
+                    <h3 class="card-title">Citation Assistant</h3>
                     <p class="card-text">
-                        An autonomous agent designed to write comprehensive Product Requirements Documents (PRDs) by synthesizing unstructured ideas and stakeholder inputs.
+                        Tired of manual citation formatting? This AI agent instantly generates accurate citations in IEEE, APA, MLA, Chicago, and more — just provide your source and let it handle the rest. Built for students, academics, and content writers who want to focus on ideas, not formatting headaches.
                     </p>
                     <div class="card-footer">
-                        <a href="#" target="_blank" class="card-link">View Project →</a>
+                        <a href="https://app.mindstudio.ai/agents/citation-assistant-48befb35/run/d4d8b130-5414-44bc-abe6-35f23738cc3a" target="_blank" class="card-link">Try it Free →</a>
                     </div>
                 </div>
 
-                <!-- Tool 2 -->
+                <!-- Tool 2: PRD Assistant -->
                 <div class="card">
-                    <div class="card-icon">🧠</div>
-                    <h3 class="card-title">Research Assistant Agent</h3>
+                    <div class="card-icon">📋</div>
+                    <h3 class="card-title">PRD Assistant</h3>
                     <p class="card-text">
-                        A dedicated AI assistant that crawls, summarizes, and extracts key insights from technical papers and whitepapers to accelerate deep-tech research.
+                        Writing a Product Requirements Document from scratch is painful. This AI-powered assistant — inspired by Amazon's Working Backwards method — guides you step by step through defining your customer, crafting a press release, mapping user stories, and outlining success metrics.
                     </p>
                     <div class="card-footer">
-                        <a href="#" target="_blank" class="card-link">View Project →</a>
+                        <a href="https://app.mindstudio.ai/agents/prd-assistant-fce492f3/run/615e843e-8471-49ab-868a-ce99c91314cd" target="_blank" class="card-link">Try it Free →</a>
                     </div>
                 </div>
             </div>
@@ -577,6 +577,7 @@
                         });
 
                         let html = '';
+                        const monthNames = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
                         // Sort years descending (highest year first)
                         const years = Object.keys(grouped).sort((a,b) => b - a);
 
@@ -596,28 +597,32 @@
                             grouped[year].forEach(item => {
                                 const rawDesc = item.Description || '';
                                 // Split by double newline to handle paragraphs correctly
-                                const lines = rawDesc.split(/\n\s*\n/).map(l => l.trim()).filter(l => l.length > 0);
+                                const blocks = rawDesc.split(/\n\s*\n/).map(b => b.trim()).filter(b => b.length > 0);
                                 
+                                // Format month badge if present
+                                const monthNum = item.Month ? parseInt(item.Month) : 0;
+                                const monthLabel = monthNum > 0 ? `<span style="display:inline-block; background: rgba(37,99,235,0.1); color: var(--secondary-color); font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 50px; margin-left: 0.5rem; vertical-align: middle;">${monthNames[monthNum]}</span>` : '';
+
                                 let descHtml = '';
-                                if (lines.length > 0) {
-                                    // Treat the first block as a lead-in paragraph
-                                    let leadIn = lines[0].replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
-                                    descHtml += `<p class="timeline-item-desc" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">${leadIn}</p>`;
-                                    
-                                    // Any subsequent blocks are treated as inner bullet points
-                                    if (lines.length > 1) {
+                                if (blocks.length > 0) {
+                                    // First block is always a lead-in paragraph (not a bullet)
+                                    let leadIn = blocks[0].replace(/(https?:\/\/[^\s,]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
+                                    descHtml += `<p class="timeline-item-desc" style="margin-top: 0.4rem; margin-bottom: 0.4rem;">${leadIn}</p>`;
+
+                                    // Subsequent blocks become bullets
+                                    if (blocks.length > 1) {
                                         descHtml += `<ul class="timeline-item-desc" style="padding-left: 1.2rem; list-style-type: disc; margin-bottom: 0;">`;
-                                        for (let i = 1; i < lines.length; i++) {
-                                            let linkedBullet = lines[i].replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
+                                        for (let i = 1; i < blocks.length; i++) {
+                                            let linkedBullet = blocks[i].replace(/(https?:\/\/[^\s,]+)/g, '<a href="$1" target="_blank" style="color: var(--secondary-color); text-decoration: underline; word-break: break-all;">[Link]</a>');
                                             descHtml += `<li style="margin-bottom: 0.5rem;">${linkedBullet}</li>`;
                                         }
                                         descHtml += `</ul>`;
                                     }
                                 }
-                                
+
                                 html += `
                                 <div class="timeline-item">
-                                    <div class="timeline-item-title">${item.Title}</div>
+                                    <div class="timeline-item-title">${item.Title}${monthLabel}</div>
                                     ${descHtml}
                                 </div>`;
                             });
