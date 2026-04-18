@@ -599,9 +599,16 @@
                                 // Split by double newline to handle paragraphs correctly
                                 const blocks = rawDesc.split(/\n\s*\n/).map(b => b.trim()).filter(b => b.length > 0);
                                 
-                                // Format month badge if present
-                                const monthNum = item.Month ? parseInt(item.Month) : 0;
-                                const monthLabel = monthNum > 0 ? `<span style="display:inline-block; background: rgba(37,99,235,0.1); color: var(--secondary-color); font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 50px; margin-left: 0.5rem; vertical-align: middle;">${monthNames[monthNum]}</span>` : '';
+                                // Format month badge: supports numeric months (1-12) OR text labels like "Ongoing", "Active"
+                                const monthRaw = item.Month ? item.Month.trim() : '';
+                                const monthNum = parseInt(monthRaw);
+                                let monthBadgeText = '';
+                                if (!isNaN(monthNum) && monthNum >= 1 && monthNum <= 12) {
+                                    monthBadgeText = monthNames[monthNum]; // e.g. "Apr"
+                                } else if (monthRaw.length > 0) {
+                                    monthBadgeText = monthRaw; // e.g. "Ongoing", "Active"
+                                }
+                                const monthLabel = monthBadgeText ? `<span style="display:inline-block; background: rgba(37,99,235,0.1); color: var(--secondary-color); font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 50px; margin-left: 0.5rem; vertical-align: middle;">${monthBadgeText}</span>` : '';
 
                                 let descHtml = '';
                                 if (blocks.length > 0) {
